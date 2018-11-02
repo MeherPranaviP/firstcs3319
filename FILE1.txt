@@ -1,0 +1,15 @@
+Drop DATABASE IF EXISTS mpunyamaassign2db;
+CREATE DATABASE mpunyamaassign2db;
+USE mpunyamaassign2db;
+GRANT USAGE ON *.* TO 'ta'@'localhost';
+DROP USER 'ta'@'localhost';
+CREATE USER 'ta'@'localhost' IDENTIFIED BY 'cs3319';
+GRANT ALL PRIVILEGES ON yourwesternuseridassign2db.* TO 'ta'@'localhost';
+FLUSH PRIVILEGES;
+SHOW TABLES;
+CREATE TABLE products(product_id CHAR(2) NOT NULL,description CHAR(20),cost_per_item FLOAT, number_of_items_on_hand INT,customer_id,PRIMARY KEY(product_id));
+CREATE TABLE agents(agent_id CHAR(2) NOT NULL,first_name CHAR(30), last_name CHAR(30), city CHAR(15), PRIMARY KEY(agent_id));
+CREATE TABLE customers(customer_id CHAR(2) NOT NULL,first_name CHAR(30),last_name CHAR(30),city CHAR(15),phone_number INT,agent_id,PRIMARY KEY(customer_id));
+SHOW TABLES;
+
+
